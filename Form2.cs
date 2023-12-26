@@ -26,7 +26,7 @@ namespace MultiApka
         {
             int kafe = Convert.ToInt32(textBox1.Text);
             int tea = Convert.ToInt32(textBox2.Text);
-            int weight = Convert.ToInt32(textBox3.Text);
+            double weight = Convert.ToDouble(textBox3.Text);
             if(checkBox1.Checked == true)
             {
                 kofein = (kafe * 2 * 90) + (tea * 50);

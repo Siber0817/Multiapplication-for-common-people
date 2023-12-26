@@ -12,6 +12,8 @@ namespace MultiApka
 {
     public partial class Form4 : Form
     {
+        int seconds = 0;
+        int change = 0;
         public Form4()
         {
             InitializeComponent();
@@ -19,21 +21,51 @@ namespace MultiApka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(timer1.Enabled == false)
-            { 
-                timer1.Start();
+            seconds = 3;
+            change = 9;
+            timer1.Start();
+            timer2.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (change >= 7)
+            {
+                label2.Text = "Nádech";
+                change--;
+            }
+            else if (change >= 4)
+            {
+                label2.Text = "Drž";
+                change--;
             }
             else
             {
-                timer1.Stop();
-            }
-            label1.Text = Convert.ToString(timer1.Interval);
-            while (timer1.Interval > 600)
-                label2.Text = "Nádech";
-            while (timer1.Interval > 300)
-                label2.Text = "Drž";
-            while (timer1.Interval < 300)
                 label2.Text = "Výdech";
+                change--;
+            }
+            if (change == 0)
+            {
+                change = 9;
+            }
+           
+                
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            timer2.Stop();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label1.Text = seconds--.ToString();
+            if( seconds == 0 )
+            {
+                seconds = 3;
+            }
         }
     }
 }
