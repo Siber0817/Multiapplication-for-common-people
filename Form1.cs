@@ -44,5 +44,13 @@ namespace MultiApka
 
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form6 frm = new Form6();
+
+            frm.Show();
+            
+        }
     }
 }

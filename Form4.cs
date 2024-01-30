@@ -21,8 +21,8 @@ namespace MultiApka
 
         private void button1_Click(object sender, EventArgs e)
         {
-            seconds = 3;
-            change = 9;
+            seconds = 4;
+            change = 11;
             timer1.Start();
             timer2.Start();
         }
@@ -30,24 +30,28 @@ namespace MultiApka
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if (change >= 7)
+            if (change >= 8)
             {
                 label2.Text = "Nádech";
                 change= change-1;
+                
             }
             else if (change >= 4)
             {
                 label2.Text = "Drž";
                 change= change-1;
+                
             }
             else if (change >= 1)
             {
                 label2.Text = "Výdech";
                 change = change - 1;
+                
             }
             else if (change == 0)
             {
-                change = 9;
+                
+                change = 11;
             }
            
                 
@@ -62,11 +66,15 @@ namespace MultiApka
         private void timer2_Tick(object sender, EventArgs e)
         {
             
-            label1.Text = seconds.ToString();
             seconds = seconds - 1;
+            progressBar1.Value += 10;
+            label1.Text = seconds.ToString();
+            
+            
             if ( seconds == 0 )
             {
-                seconds = 3;
+                seconds = 4;
+                progressBar1.Value = 0;
             }
         }
 
