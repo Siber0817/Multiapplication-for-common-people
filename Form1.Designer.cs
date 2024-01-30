@@ -66,13 +66,13 @@
             // 
             // button4
             // 
-            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(450, 260);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(254, 113);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Placeholder";
+            this.button4.Text = "Motivace / MEMES";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 

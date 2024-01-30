@@ -33,19 +33,19 @@ namespace MultiApka
             if (change >= 7)
             {
                 label2.Text = "Nádech";
-                change--;
+                change= change-1;
             }
             else if (change >= 4)
             {
                 label2.Text = "Drž";
-                change--;
+                change= change-1;
             }
-            else
+            else if (change >= 1)
             {
                 label2.Text = "Výdech";
-                change--;
+                change = change - 1;
             }
-            if (change == 0)
+            else if (change == 0)
             {
                 change = 9;
             }
@@ -61,11 +61,19 @@ namespace MultiApka
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label1.Text = seconds--.ToString();
-            if( seconds == 0 )
+            
+            label1.Text = seconds.ToString();
+            seconds = seconds - 1;
+            if ( seconds == 0 )
             {
                 seconds = 3;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            timer2.Stop();
         }
     }
 }
